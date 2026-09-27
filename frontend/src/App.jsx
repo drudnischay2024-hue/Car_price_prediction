@@ -191,19 +191,11 @@ function App() {
                     <span className="text-gray-500 text-sm">Model Used</span>
                     <span className="font-semibold text-gray-800">Random Forest</span>
                   </div>
-                  <div className="flex justify-between items-center border-b border-gray-50 pb-2">
+                  <div className="flex justify-between items-center">
                     <span className="text-gray-500 text-sm">Accuracy (R²)</span>
                     <span className="font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded">
                       {(metrics.R2 * 100).toFixed(1)}%
                     </span>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-gray-50 pb-2">
-                    <span className="text-gray-500 text-sm">MAE</span>
-                    <span className="font-medium text-gray-800">${(metrics.MAE * 1000).toFixed(0)}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-500 text-sm">RMSE</span>
-                    <span className="font-medium text-gray-800">${(metrics.RMSE * 1000).toFixed(0)}</span>
                   </div>
                 </div>
               ) : (
