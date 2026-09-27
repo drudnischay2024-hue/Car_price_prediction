@@ -45,8 +45,8 @@ def plot_correlation(df, save_dir):
 
 def main():
     print("Running EDA...")
-    df = load_data('../../data/car_data.csv')
-    save_dir = '../../reports/eda_plots'
+    df = load_data('data/car_data.csv')
+    save_dir = 'reports/eda_plots'
     os.makedirs(save_dir, exist_ok=True)
     
     # 1. Price Distribution

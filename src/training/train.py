@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -68,7 +67,7 @@ def evaluate_model(model, X_test, y_test, name):
 
 def main():
     print("Loading data...")
-    X, y = load_data('../../data/car_data.csv')
+    X, y = load_data('data/car_data.csv')
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
@@ -107,14 +106,14 @@ def main():
     print(f"\nBest Model: {best_name} with R2: {best_r2:.2f}")
     
     # Save the best model
-    os.makedirs('../../models', exist_ok=True)
-    model_path = '../../models/best_model.pkl'
+    os.makedirs('models', exist_ok=True)
+    model_path = 'models/best_model.pkl'
     joblib.dump(best_model, model_path)
     print(f"Saved best model to {model_path}")
     
     # Save metrics
-    os.makedirs('../../reports', exist_ok=True)
-    with open('../../reports/metrics.json', 'w') as f:
+    os.makedirs('reports', exist_ok=True)
+    with open('reports/metrics.json', 'w') as f:
         json.dump({"best_model": best_name, "metrics": metrics_report}, f, indent=4)
         
     print("Done!")
